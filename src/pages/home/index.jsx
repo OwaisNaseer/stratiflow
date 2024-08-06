@@ -1,7 +1,7 @@
 import React from "react";
 import CustomCheckbox from "../../components/shared/Checkbox";
 import { CheckboxIcon } from "../../assets/icons";
-import CustomSelect from "../../components/shared/select";
+import CustomSelect from "../../components/shared/CustomSelect";
 export default function Home() {
   const [isSelected, setIsSelected] = React.useState(false);
   const [isSelected2, setIsSelected2] = React.useState(false);
