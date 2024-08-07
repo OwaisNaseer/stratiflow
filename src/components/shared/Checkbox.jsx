@@ -1,6 +1,6 @@
 import React from "react";
 import { Checkbox } from "@nextui-org/react";
-export default function CustomCheckbox({isSelected, setIsSelected, icon, label }) {
+export default function CustomNextUICheckbox({isSelected, setIsSelected, icon, label }) {
   
   return (
     <div className="flex gap-4">
