@@ -37,7 +37,13 @@ const Input = ({
 
   return (
     <div className="mt-1 pb-1 relative w-full">
-      <div className={`flex items-center border  rounded w-full  ${error ? "border-red-500 ":"" }`}>
+      <div
+        className={`flex items-center border  rounded w-full  ${
+          error
+            ? "border-red-500 hover:border-error00 focus:border-error00 focus:ring-error00"
+            : "border-secondary02 hover:border-primary00 focus:border-primary00 focus:ring-primary00"
+        } `}
+      >
         {label ? (
           <label
             htmlFor="email"
@@ -48,8 +54,9 @@ const Input = ({
             {label}
           </label>
         ) : null}
-
-        <span className="black text-[13px] mx-2 mt-0.5">{startContent}</span>
+        {startContent && (
+          <div className="black text-[13px] mx-2 mt-0.5">{startContent}</div>
+        )}
 
         <input
           autoComplete="off"
@@ -57,11 +64,7 @@ const Input = ({
           placeholder={placeholder}
           type={passwordVisible ? "text" : type}
           required={required}
-          className={`  w-full appearance-none border-none rounded ${
-            error
-              ? "border-error00 hover:border-error00 focus:border-error00 focus:ring-error00"
-              : "border-red-500 hover:border-primary00 focus:border-primary00 focus:ring-primary00"
-          }  ${
+          className={`  w-full appearance-none border-none rounded  ${
             startContent ? "px-0" : "px-3"
           } h-9 placeholder-text03 focus:outline-none text-sm placeholder:text-sm`}
           value={value}
@@ -75,8 +78,9 @@ const Input = ({
           disabled={disabled}
           autoFocus={autoFocus}
         />
-        {endContent && (
-          <span className="black text-[13px] mr-2 mt-0.5">{endContent}</span>
+
+        {endContent && type != "password" && (
+          <div className="black text-[13px] mr-2 mt-0.5">{endContent}</div>
         )}
       </div>
 
